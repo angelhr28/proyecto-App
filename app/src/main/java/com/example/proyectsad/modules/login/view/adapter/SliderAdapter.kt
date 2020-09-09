@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectsad.R
 import com.example.proyectsad.modules.login.model.pojo.Slider
+import kotlinx.android.synthetic.main.slider_item_container.view.*
 
 class SliderAdapter:RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
 
@@ -15,11 +16,11 @@ class SliderAdapter:RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
 
     fun setDataList(data:List<Slider>){
         sliderDataList = data
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SliderViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.slider_item_container,parent,false)
-        return SliderViewHolder(view)
+        return SliderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.slider_item_container,parent,false))
     }
 
     override fun getItemCount(): Int = sliderDataList.size
@@ -28,16 +29,22 @@ class SliderAdapter:RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
         holder.bindView(sliderDataList[position])
     }
 
-    inner class SliderViewHolder(view: View):RecyclerView.ViewHolder(view){
+    class SliderViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
 
-        private val textTitle:TextView         = view.findViewById(R.id.txtSliderTitle)
-        private val textDescription:TextView   = view.findViewById(R.id.txtSliderDescription)
-        private val imageIcon:ImageView        = view.findViewById(R.id.imageSliderIcon)
+        private var lblTitleSlider:TextView?  = null
+        private var lblDescSlider :TextView?  = null
+        private var imgSlider     :ImageView? = null
 
         fun bindView(slider: Slider){
-            textTitle.text       = slider.title
-            textDescription.text = slider.description
-            imageIcon.setImageResource(slider.image)
+            itemView.apply {
+                lblTitleSlider = lbl_title_slider
+                lblDescSlider  = lbl_desc_slider
+                imgSlider      = img_slider
+
+                lblTitleSlider?.text       = slider.title
+                lblDescSlider?.text = slider.description
+                slider.image?.let { imgSlider?.setImageResource(it) }
+            }
         }
     }
 }

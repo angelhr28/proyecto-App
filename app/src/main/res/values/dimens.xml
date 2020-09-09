@@ -2,5 +2,6 @@
 <resources>
     <dimen name="width_button">230dp</dimen>
     <dimen name="height_button">50dp</dimen>
-    
+    <dimen name="padding_ind_slider">50dp</dimen>
+
 </resources>

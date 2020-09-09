@@ -1,9 +1,6 @@
 package com.example.proyectsad.helper.aplication
 
 import android.content.Context
-import android.graphics.Color
-import pe.softhy.smiledu.root.ctx
-import java.util.*
 
 class MySharedPreferences(context: Context) {
 

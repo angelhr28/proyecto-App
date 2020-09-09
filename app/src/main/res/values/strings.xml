@@ -3,4 +3,6 @@
 
     <string name="btn_sign_in">Iniciar Sesión</string>
     <string name="btn_sign_up">Regístrate</string>
+    <string name="tittle">Tittle</string>
+    <string name="description">Description</string>
 </resources>
