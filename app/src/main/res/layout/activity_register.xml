@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.login.view.RegisterActivity">
+
+    <TextView
+        android:id="@+id/lbl_tittle_sign_up"
+        android:text="@string/tittle_sign_up"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/TextViewTittle"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cedt_username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_et"
+        android:hint="@string/et_username"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_tittle_sign_up"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cedt_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_et"
+        android:hint="@string/et_email"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cedt_username"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cedt_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_et"
+        android:hint="@string/et_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cedt_email"
+        app:endIconMode="password_toggle"
+        app:boxStrokeColor="@color/color_primary"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sign_up_register"
+        android:text="@string/btn_sign_up"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/cedt_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/ButtonCorner"
+        />
+
+    <View
+        android:id="@+id/line_left"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/lbl_or"
+        app:layout_constraintTop_toTopOf="@id/lbl_or"
+        app:layout_constraintBottom_toBottomOf="@id/lbl_or"
+        style="@style/ViewSeparator"/>
+
+    <TextView
+        android:id="@+id/lbl_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/lbl_or_sptor"
+        android:textSize="@dimen/size_lbl_or_sptr"
+        android:textColor="@color/color_black"
+        app:layout_constraintTop_toBottomOf="@id/btn_sign_up_register"
+        app:layout_constraintRight_toLeftOf="@id/btn_sign_up_register"
+        app:layout_constraintLeft_toRightOf="@id/btn_sign_up_register"/>
+
+    <View
+        android:id="@+id/line_right"
+        app:layout_constraintTop_toTopOf="@id/lbl_or"
+        app:layout_constraintBottom_toBottomOf="@id/lbl_or"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/lbl_or"
+        style="@style/ViewSeparator"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/lbl_register_with"
+        android:textColor="@color/color_primary"
+        app:layout_constraintLeft_toLeftOf="@id/lbl_or"
+        app:layout_constraintRight_toRightOf="@id/lbl_or"
+        app:layout_constraintTop_toBottomOf="@id/lbl_or" />
+
+    <ImageView
+        android:id="@+id/btn_sign_up_gle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/ic_ggle"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/btn_sign_up_fb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/ic_fb"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

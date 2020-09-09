@@ -9,8 +9,14 @@
     <string name="intro_primera">titulo 1</string>
     <string name="intro_segunda">titulo2</string>
     <string name="intro_tercera">titulo3</string>
-    
+
     <string name="intro_desc_primera">descripcion 1</string>
     <string name="intro_desc_segunda">descripcion 2</string>
     <string name="intro_desc_tercera">descripcion 3</string>
+    <string name="tittle_sign_up">Regístrate</string>
+    <string name="et_username">Nombre Completo</string>
+    <string name="et_email">Correo</string>
+    <string name="et_password">Contraseña</string>
+    <string name="lbl_register_with">Regístrate con</string>
+    <string name="lbl_or_sptor">o</string>
 </resources>
