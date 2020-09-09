@@ -3,5 +3,7 @@
     <dimen name="width_button">230dp</dimen>
     <dimen name="height_button">50dp</dimen>
     <dimen name="padding_ind_slider">50dp</dimen>
+    <dimen name="font_size_button">16dp</dimen>
+    <dimen name="elevation_button">4dp</dimen>
 
 </resources>

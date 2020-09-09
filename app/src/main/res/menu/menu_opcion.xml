@@ -11,18 +11,18 @@
         android:title="Opciones">
         <menu>
             <item
-                android:actionMenuTextColor = "@color/colorText"
+                android:actionMenuTextColor = "@color/color_text"
                 android:id="@+id/action_edit_noticia"
                 android:icon="@drawable/ic_launcher_foreground"
                 android:title="Editar"
-                android:iconTint="@color/colorText"
+                android:iconTint="@color/color_text"
                 app:showAsAction="collapseActionView" />
             <item
-                android:actionMenuTextColor = "@color/colorText"
+                android:actionMenuTextColor = "@color/color_text"
                 android:id="@+id/action_eliminar_noticia"
                 android:icon="@drawable/ic_launcher_foreground"
                 android:title="Eliminar"
-                android:iconTint="@color/colorText"
+                android:iconTint="@color/color_text"
                 app:showAsAction="collapseActionView" />
         </menu>
     </item>

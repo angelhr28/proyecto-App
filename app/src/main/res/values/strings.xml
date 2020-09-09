@@ -5,6 +5,12 @@
     <string name="btn_sign_up">Regístrate</string>
     <string name="tittle">Tittle</string>
     <string name="description">Description</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="intro_primera">titulo 1</string>
+    <string name="intro_segunda">titulo2</string>
+    <string name="intro_tercera">titulo3</string>
+    
+    <string name="intro_desc_primera">descripcion 1</string>
+    <string name="intro_desc_segunda">descripcion 2</string>
+    <string name="intro_desc_tercera">descripcion 3</string>
 </resources>

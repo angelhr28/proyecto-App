@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.proyectsad.R
-import kotlinx.android.synthetic.main.slider_item_container.view.*
+import kotlinx.android.synthetic.main.fragment_intro.view.*
 
 class IntroFragment : Fragment() {
 
