@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_opciones_news"
+        android:icon="@drawable/ic_launcher_background"
+        android:orderInCategory="101"
+        app:showAsAction="always"
+        android:title="Opciones">
+        <menu>
+            <item
+                android:actionMenuTextColor = "@color/colorText"
+                android:id="@+id/action_edit_noticia"
+                android:icon="@drawable/ic_launcher_foreground"
+                android:title="Editar"
+                android:iconTint="@color/colorText"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:actionMenuTextColor = "@color/colorText"
+                android:id="@+id/action_eliminar_noticia"
+                android:icon="@drawable/ic_launcher_foreground"
+                android:title="Eliminar"
+                android:iconTint="@color/colorText"
+                app:showAsAction="collapseActionView" />
+        </menu>
+    </item>
+</menu>
