@@ -70,7 +70,6 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     // GSON CODE
     implementation 'com.google.code.gson:gson:2.8.5'
