@@ -17,18 +17,17 @@
 
     <application
         android:allowBackup="true"
-        android:appComponentFactory="whateverString"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher"
+        android:appComponentFactory="whateverString"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory" >
         <activity android:name=".modules.login.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -73,6 +73,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/model/pojo/Slider.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/model/service/LoginService.kt">
           <value>
             <set />
@@ -84,6 +89,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/presenter/LoginPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/view/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/view/adapter/SliderAdapter.kt">
           <value>
             <set />
           </value>
