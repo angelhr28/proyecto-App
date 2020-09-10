@@ -9,7 +9,7 @@
     <dimen name="margin_top_lbl_ttl">60dp</dimen>
     <dimen name="margin_top_et">25dp</dimen>
     <dimen name="size_width_view_sptr">136dp</dimen>
-    <dimen name="size_height_view_sptr">3dp</dimen>
+    <dimen name="size_height_view_sptr">1dp</dimen>
     <dimen name="size_lbl_or_sptr">18sp</dimen>
 
 </resources>

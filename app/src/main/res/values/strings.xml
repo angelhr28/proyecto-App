@@ -13,6 +13,7 @@
     <string name="intro_desc_primera">descripcion 1</string>
     <string name="intro_desc_segunda">descripcion 2</string>
     <string name="intro_desc_tercera">descripcion 3</string>
+
     <string name="tittle_sign_up">Regístrate</string>
     <string name="et_username">Nombre Completo</string>
     <string name="et_email">Correo</string>
