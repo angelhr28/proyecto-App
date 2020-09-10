@@ -1,5 +1,6 @@
 package com.example.proyectsad.modules.login.view
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import androidx.viewpager.widget.ViewPager
 import com.example.proyectsad.R
 import com.example.proyectsad.helper.aplication.*
 import com.example.proyectsad.modules.login.mvp.LoginMVP
+import com.example.proyectsad.root.ctx
 import kotlinx.android.synthetic.main.activity_introduccion.*
 
 class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
@@ -57,6 +59,10 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
         })
 
         btnSignUp?.setOnClickListener { goToRegister() }
+        btnSignIn?.setOnClickListener {
+            val intent = Intent(ctx, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
