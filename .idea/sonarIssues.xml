@@ -113,12 +113,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/circle_white.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_facebook.xml">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_google.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_rectangle_24.xml">
           <value>
             <set />
           </value>
@@ -154,6 +164,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
           <value>
             <set />
           </value>
@@ -204,6 +219,11 @@
           </value>
         </entry>
         <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/helper/application/Utils.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/drawable/ripple_toggle_end.xml">
           <value>
             <set />
           </value>

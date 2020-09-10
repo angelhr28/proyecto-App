@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".modules.login.view.LoginActivity">
 
@@ -20,9 +21,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="54dp"
         android:text="@string/iniciar_ses_on"
         android:textSize="@dimen/title_principal"
+        android:fontFamily="@font/googlesans_regular"
         android:textColor="@color/color_black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -42,8 +44,8 @@
         app:layout_constraintTop_toBottomOf="@+id/lbl_title_login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        style="@style/ContenInputEditext">
-
+        style="@style/ContenInputEditext"
+        >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_usuario"
             android:layout_width="match_parent"
@@ -55,6 +57,7 @@
             android:scrollbars="vertical"
             android:maxLength="1000"
             />
+
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -65,7 +68,7 @@
         android:focusableInTouchMode="true"
         android:hint="@string/contrase_a"
         app:errorEnabled="true"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/elevation_button"
         app:layout_constraintTop_toBottomOf="@+id/cedt_usuario"
         app:layout_constraintLeft_toLeftOf="@+id/cedt_usuario"
         app:layout_constraintRight_toRightOf="@+id/cedt_usuario"
@@ -89,12 +92,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/olvidaste_tu_contrase_a"
+        android:layout_marginTop="8dp"
         android:textColor="@color/color_primary"
         android:fontFamily="@font/googlesans_regular"
         android:textSize="@dimen/text_size_standart"
         app:layout_constraintRight_toRightOf="@+id/cedt_password"
         app:layout_constraintTop_toBottomOf="@+id/cedt_password"
     />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
         android:text="@string/iniciar_ses_on"
@@ -104,7 +109,6 @@
         app:layout_constraintRight_toRightOf="parent"
         style="@style/ButtonCorner"
         />
-
 
     <LinearLayout
         android:id="@+id/ln_lines"
@@ -149,44 +153,72 @@
         android:textColor="@color/color_primary"
         android:fontFamily="@font/googlesans_regular"
         android:textSize="@dimen/text_size_standart"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ln_lines"
         />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/btn_google"
+        android:contentDescription="@string/regresar"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="@dimen/elevation_button"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs"
         app:srcCompat="@drawable/ic_google"
+        android:background="@drawable/ripple_corner"
         app:layout_constraintTop_toBottomOf="@+id/lbl_other_sesion"
         app:layout_constraintLeft_toLeftOf="@id/lbl_other_sesion"
-        android:contentDescription="@string/regresar"
-        android:elevation="4dp"
-        android:layout_marginTop="@dimen/margin_top"
         style="@style/styleIconsOffColor"
         />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/btn_facebook"
+        android:contentDescription="@string/regresar"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="@dimen/elevation_button"
         app:srcCompat="@drawable/ic_facebook"
+        android:background="@drawable/circle_white"
         app:layout_constraintTop_toBottomOf="@+id/lbl_other_sesion"
         app:layout_constraintRight_toRightOf="@id/lbl_other_sesion"
-        android:contentDescription="@string/regresar"
-        android:layout_marginTop="@dimen/margin_top"
-        android:elevation="4dp"
         style="@style/styleIconsOffColor"
         />
 
     <TextView
-        android:id="@+id/no_tienes_u"
+        android:id="@+id/lbl_desc_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size_standart"
         android:text="@string/no_tienes_u"
-        android:layout_marginTop="@dimen/margin_top"
+        android:elevation="@dimen/elevation_button"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs"
         android:fontFamily="@font/googlesans_regular"
         app:layout_constraintTop_toBottomOf="@+id/btn_facebook"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
+
+    <ImageView
+        android:id="@+id/img_rectangle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_other_sesion"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ic_rectangle"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_rectangle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/rectagle_curvado"
+    />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

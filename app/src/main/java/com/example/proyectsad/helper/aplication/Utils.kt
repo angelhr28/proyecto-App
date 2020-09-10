@@ -6,6 +6,7 @@ import android.os.Build
 import android.text.Html
 import android.text.SpannableString
 import android.text.Spanned
+import android.util.Log
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.example.proyectsad.R
@@ -29,10 +30,7 @@ fun setColorToStatusBar(activity: Activity, color: Int = Color.WHITE) {
     }
 }
 fun setColorToNavigatioBar(
-    activity: Activity, color: Int = ContextCompat.getColor(
-        ctx,
-        R.color.color_primary
-    )
+    activity: Activity, color: Int = ContextCompat.getColor(ctx,R.color.color_primary)
 ) {
     val window = activity.window
     val hsv = FloatArray(3)
@@ -49,8 +47,9 @@ fun setColorToNavigatioBar(
     }
 }
 
-private fun getColoredSpanned(text: String, color: String): String? {
-    return "<font color=$color>$text</font>"
+fun String.getColoredSpanned(color: String): String? {
+    Log.e("TAG", "getColoredSpanned: $color" )
+    return "<font color=$color>$this</font>"
 }
 
 fun String?.fromHtml() : Spanned? {
