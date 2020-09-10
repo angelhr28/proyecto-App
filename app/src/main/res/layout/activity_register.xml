@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".modules.login.view.RegisterActivity">
 
+    <ImageButton
+        android:id="@+id/btn_navigation_from_register"
+        app:srcCompat="@drawable/ic_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:contentDescription="@string/regresar"
+        style="@style/styleIconsNavigation"
+        />
+
     <TextView
         android:id="@+id/lbl_tittle_sign_up"
         android:text="@string/tittle_sign_up"
+        android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,60 +26,82 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cedt_username"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_et"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs"
+        android:layout_marginLeft="@dimen/margin_left_and_right_inputs"
+        android:layout_marginRight="@dimen/margin_left_and_right_inputs"
+        app:errorEnabled="true"
         android:hint="@string/et_username"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lbl_tittle_sign_up"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        style="@style/ContenInputEditext">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:inputType="textMultiLine"
+            android:lines="1"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:maxLength="1000"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cedt_email"
-        android:layout_width="300dp"
+        style="@style/ContenInputEditext"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_et"
+        android:focusableInTouchMode="true"
         android:hint="@string/et_email"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="@+id/cedt_username"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cedt_username"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        app:layout_constraintStart_toStartOf="@+id/cedt_username"
+        app:layout_constraintTop_toBottomOf="@id/cedt_username">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:inputType="textMultiLine"
+            android:lines="1"
+            android:maxLength="1000"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cedt_password"
-        android:layout_width="300dp"
+        style="@style/ContenInputEditext"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_et"
+        android:focusableInTouchMode="true"
         android:hint="@string/et_password"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cedt_email"
         app:endIconMode="password_toggle"
-        app:boxStrokeColor="@color/color_primary"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="@+id/cedt_email"
+        app:layout_constraintStart_toStartOf="@+id/cedt_email"
+        app:layout_constraintTop_toBottomOf="@id/cedt_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:inputType="textMultiLine"
+            android:lines="1"
+            android:maxLength="1000"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,62 +115,84 @@
         style="@style/ButtonCorner"
         />
 
-    <View
-        android:id="@+id/line_left"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/lbl_or"
-        app:layout_constraintTop_toTopOf="@id/lbl_or"
-        app:layout_constraintBottom_toBottomOf="@id/lbl_or"
-        style="@style/ViewSeparator"/>
+    <LinearLayout
+        android:id="@+id/ln_lines_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_icons"
+        android:layout_marginLeft="@dimen/margin_left_rigth_lines"
+        android:layout_marginRight="@dimen/margin_left_rigth_lines"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up_register">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center_horizontal"
+            android:text="O"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_standart"
+            android:fontFamily="@font/googlesans_regular"
+            android:textColor="@color/color_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_black" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/lbl_or"
+        android:id="@+id/lbl_register_with"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/lbl_or_sptor"
-        android:textSize="@dimen/size_lbl_or_sptr"
-        android:textColor="@color/color_black"
-        app:layout_constraintTop_toBottomOf="@id/btn_sign_up_register"
-        app:layout_constraintRight_toLeftOf="@id/btn_sign_up_register"
-        app:layout_constraintLeft_toRightOf="@id/btn_sign_up_register"/>
-
-    <View
-        android:id="@+id/line_right"
-        app:layout_constraintTop_toTopOf="@id/lbl_or"
-        app:layout_constraintBottom_toBottomOf="@id/lbl_or"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/lbl_or"
-        style="@style/ViewSeparator"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/lbl_register_with"
         android:textColor="@color/color_primary"
-        app:layout_constraintLeft_toLeftOf="@id/lbl_or"
-        app:layout_constraintRight_toRightOf="@id/lbl_or"
-        app:layout_constraintTop_toBottomOf="@id/lbl_or" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ln_lines_register" />
 
-    <ImageView
-        android:id="@+id/btn_sign_up_gle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/ic_ggle"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <ImageButton
+        android:id="@+id/btn_sign_up_google"
+        android:contentDescription="@string/description_fb"
+        android:elevation="4dp"
+        android:layout_marginTop="@dimen/margin_top"
+        app:srcCompat="@drawable/ic_google_two"
+        app:layout_constraintStart_toStartOf="@+id/lbl_register_with"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_register_with"
+        style="@style/styleIconsOffColor"/>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/btn_sign_up_fb"
+        android:contentDescription="@string/description_google"
+        android:elevation="4dp"
+        android:layout_marginTop="@dimen/margin_top"
+        app:srcCompat="@drawable/ic_fb"
+        app:layout_constraintEnd_toEndOf="@+id/lbl_register_with"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_register_with"
+        style="@style/styleIconsOffColor"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/ic_fb"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:fontFamily="@font/googlesans_regular"
+        android:text="@string/lbl_register_sign_in"
+        android:textSize="@dimen/text_size_standart"
+        android:textAlignment="center"
+        android:layout_marginTop="76dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_register_with" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

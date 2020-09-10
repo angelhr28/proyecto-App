@@ -15,7 +15,7 @@
     <string name="intro_desc_tercera">descripcion 3</string>
 
     <string name="tittle_sign_up">Regístrate</string>
-    <string name="et_username">Nombre Completo</string>
+    <string name="et_username">Nombre completo</string>
     <string name="et_email">Correo</string>
     <string name="et_password">Contraseña</string>
     <string name="lbl_register_with">Regístrate con</string>
@@ -28,4 +28,7 @@
     <string name="other_sesion">Inicia sesión con</string>
     <string name="contrase_a">Contraseña</string>
     <string name="no_tienes_u">¿No tienes una cuenta? Registrate</string>
+    <string name="description_fb">desciptionFB</string>
+    <string name="description_google">description_google</string>
+    <string name="lbl_register_sign_in">¿Ya tienes una cuenta? Inicia sesión</string>
 </resources>

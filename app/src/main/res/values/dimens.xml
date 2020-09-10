@@ -6,9 +6,9 @@
     <dimen name="font_size_button">16dp</dimen>
     <dimen name="elevation_button">4dp</dimen>
 
-    <dimen name="size_lbl_ttl">35sp</dimen>
-    <dimen name="margin_top_lbl_ttl">60dp</dimen>
-    <dimen name="margin_top_et">25dp</dimen>
+    <dimen name="size_lbl_ttl">36sp</dimen>
+    <dimen name="margin_top_lbl_ttl">48dp</dimen>
+    <dimen name="margin_top_et">36dp</dimen>
     <dimen name="size_width_view_sptr">136dp</dimen>
     <dimen name="size_height_view_sptr">1dp</dimen>
     <dimen name="size_lbl_or_sptr">18sp</dimen>
@@ -18,7 +18,7 @@
     <dimen name="width_and_height_icons">36dp</dimen>
     <dimen name="margin_icons_navigation">8dp</dimen>
     <dimen name="margin_left_and_right_inputs">36dp</dimen>
-    <dimen name="text_size_standart">16dp</dimen>
+    <dimen name="text_size_standart">16sp</dimen>
     <dimen name="margin_left_rigth_lines">36dp</dimen>
     <dimen name="margin_top">24dp</dimen>
     <dimen name="size_icons">24dp</dimen>

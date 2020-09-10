@@ -34,8 +34,10 @@
     <style name="TextViewTittle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_marginTop">@dimen/margin_top_lbl_ttl</item>
         <item name="android:textSize">@dimen/size_lbl_ttl</item>
+        <item name="android:textColor">@color/color_black</item>
         <item name="android:fontFamily">@font/googlesans_regular</item>
     </style>
 
