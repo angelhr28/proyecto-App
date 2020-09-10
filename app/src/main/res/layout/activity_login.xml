@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".modules.login.view.LoginActivity">
+
+    <ImageButton
+        android:id="@+id/btn_navigation"
+        app:srcCompat="@drawable/ic_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:contentDescription="@string/regresar"
+        style="@style/styleIconsNavigation"
+        />
+
+    <TextView
+        android:id="@+id/lbl_title_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="48dp"
+        android:text="@string/iniciar_ses_on"
+        android:textSize="@dimen/title_principal"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+    />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cedt_usuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:hint="@string/correo"
+        app:errorEnabled="true"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs"
+        android:layout_marginLeft="@dimen/margin_left_and_right_inputs"
+        android:layout_marginRight="@dimen/margin_left_and_right_inputs"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_title_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/ContenInputEditext">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="1"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:maxLength="1000"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cedt_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:hint="@string/contrase_a"
+        app:errorEnabled="true"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/cedt_usuario"
+        app:layout_constraintLeft_toLeftOf="@+id/cedt_usuario"
+        app:layout_constraintRight_toRightOf="@+id/cedt_usuario"
+        style="@style/ContenInputEditext">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="1"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:maxLength="1000"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lbl_recup_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/olvidaste_tu_contrase_a"
+        android:textColor="@color/color_primary"
+        android:fontFamily="@font/googlesans_regular"
+        android:textSize="@dimen/text_size_standart"
+        app:layout_constraintRight_toRightOf="@+id/cedt_password"
+        app:layout_constraintTop_toBottomOf="@+id/cedt_password"
+    />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:text="@string/iniciar_ses_on"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_recup_pass"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/ButtonCorner"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/ln_lines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_icons"
+        android:layout_marginLeft="@dimen/margin_left_rigth_lines"
+        android:layout_marginRight="@dimen/margin_left_rigth_lines"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center_horizontal"
+            android:text="O"
+            android:textSize="@dimen/text_size_standart"
+            android:fontFamily="@font/googlesans_regular"
+            android:textColor="@color/color_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_black" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lbl_other_sesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/other_sesion"
+        android:textColor="@color/color_primary"
+        android:fontFamily="@font/googlesans_regular"
+        android:textSize="@dimen/text_size_standart"
+        android:layout_marginTop="24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ln_lines"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_google"
+        app:srcCompat="@drawable/ic_google"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_other_sesion"
+        app:layout_constraintLeft_toLeftOf="@id/lbl_other_sesion"
+        android:contentDescription="@string/regresar"
+        android:elevation="4dp"
+        android:layout_marginTop="@dimen/margin_top"
+        style="@style/styleIconsOffColor"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_facebook"
+        app:srcCompat="@drawable/ic_facebook"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_other_sesion"
+        app:layout_constraintRight_toRightOf="@id/lbl_other_sesion"
+        android:contentDescription="@string/regresar"
+        android:layout_marginTop="@dimen/margin_top"
+        android:elevation="4dp"
+        style="@style/styleIconsOffColor"
+        />
+
+    <TextView
+        android:id="@+id/no_tienes_u"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_standart"
+        android:text="@string/no_tienes_u"
+        android:layout_marginTop="@dimen/margin_top"
+        android:fontFamily="@font/googlesans_regular"
+        app:layout_constraintTop_toBottomOf="@+id/btn_facebook"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
