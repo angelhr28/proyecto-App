@@ -11,8 +11,8 @@ android {
         applicationId "com.example.proyectsad"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 1    // subir al momento de lanzar a tienda
+        versionName "1.0"// subir al momento de lanzar a tienda
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
@@ -71,6 +71,14 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
+    // ANKO
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+    implementation "org.jetbrains.anko:anko-cardview-v7:$anko_version"
+    implementation "org.jetbrains.anko:anko-coroutines:$anko_version"
+
     // GSON CODE
     implementation 'com.google.code.gson:gson:2.8.5'
 
@@ -113,4 +121,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:17.0.0'
 
 
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
 }

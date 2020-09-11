@@ -24,4 +24,5 @@
     <dimen name="margin_left_rigth_lines">36dp</dimen>
     <dimen name="margin_top">24dp</dimen>
     <dimen name="size_icons">24dp</dimen>
+    <dimen name="corner_dialog">20dp</dimen>
 </resources>

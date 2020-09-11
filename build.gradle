@@ -1,9 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: "org.jetbrains.kotlin.jvm"
+
 buildscript {
     ext.kotlin_version = "1.4.0"
     repositories {
         google()
         jcenter()
+
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
@@ -36,8 +39,4 @@ ext{
     carouselLayoutManager_version = "1.2.4"
     butter_knife_version = "8.8.1"
     anko_version='0.10.8'
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

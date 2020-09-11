@@ -24,10 +24,21 @@ class RegisterActivity : AppCompatActivity() {
         val signInText      :String? = getString(R.string.lbl_register_sign_in).getColoredSpanned(getString(R.string.color_white))
 
         lblDescLogin = lbl_desc_login
-        lblDescLogin?.text = Html.fromHtml("$signInQuestion $signInText")
+
+        lblDescLogin?.apply {
+            text = Html.fromHtml("$signInQuestion $signInText")
+            setOnClickListener {
+                onBackPressed()
+            }
+        }
 
     }
 
-
+    override fun onBackPressed() {
+        this.finish();
+        intent?.apply {
+            overridePendingTransition(R.anim.right_in,R.anim.right_out)
+        }
+    }
 
 }

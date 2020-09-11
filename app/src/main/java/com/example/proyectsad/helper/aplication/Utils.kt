@@ -1,16 +1,21 @@
 package com.example.proyectsad.helper.aplication
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.text.Html
 import android.text.SpannableString
 import android.text.Spanned
 import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.example.proyectsad.R
 import com.example.proyectsad.root.ctx
+import org.jetbrains.anko.layoutInflater
 
 // AQUI DEJAREMOS TODAS LAS FUNCIONES QUE REUTILIZAREMOS
 
@@ -66,5 +71,31 @@ fun String?.fromHtml() : Spanned? {
         html == null -> SpannableString("")
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
         else -> Html.fromHtml(html, null, MyTagHandler())
+    }
+}
+
+fun calcularPxToDps(context: Context, pixels: Int): Int {
+    val scale = context.resources.displayMetrics.density
+    return (pixels*scale + 0.5f).toInt()
+}
+
+fun dialogDefault(ctx: Context, height:Int, width:Int, layout : Int, function: (View, AlertDialog) -> Unit ) {
+
+    val ancho = calcularPxToDps(ctx, width)
+    val alto = calcularPxToDps(ctx, height)
+    val dialog = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) AlertDialog.Builder(
+        ctx,
+        R.style.CustomDialogBackground
+    ) else AlertDialog.Builder(ctx)
+
+    val view = ctx.layoutInflater.inflate(layout, null)
+    val customDialog = dialog.create()
+    customDialog.apply {
+        window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        setView(view)
+        function(view,this)
+        show()
+        window?.setLayout(ancho, alto)
+        window?.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
     }
 }
