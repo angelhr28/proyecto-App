@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         val pregRegist: String? = getString(R.string.no_tienes_u).getColoredSpanned(getString(R.string.color_black))
 
         lblDescRegister = lbl_desc_register
-        Log.e("TAG", "$pregRegist $registrate" )
+
         lblDescRegister?.text = Html.fromHtml("$pregRegist $registrate")
 
 

@@ -68,6 +68,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/mvp/LoginMVP.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/view/IntroFragment.kt">
           <value>
             <set />

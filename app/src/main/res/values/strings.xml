@@ -14,19 +14,19 @@
     <string name="intro_desc_segunda">descripcion 2</string>
     <string name="intro_desc_tercera">descripcion 3</string>
 
-    <string name="iniciar_ses_on">Iniciar sesíon</string>
-    <string name="correo">Correo</string>
-    <string name="regresar">Regresar</string>
-    <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
-    <string name="other_sesion">Inicia sesión con</string>
-    <string name="contrase_a">Contraseña</string>
-
     <string name="tittle_sign_up">Regístrate</string>
     <string name="et_username">Nombre completo</string>
     <string name="et_email">Correo</string>
     <string name="et_password">Contraseña</string>
     <string name="lbl_register_with">Regístrate con</string>
     <string name="lbl_or_sptor">o</string>
+
+    <string name="iniciar_ses_on">Iniciar sesíon</string>
+    <string name="correo">Correo</string>
+    <string name="regresar">Regresar</string>
+    <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
+    <string name="other_sesion">Inicia sesión con</string>
+    <string name="contrase_a">Contraseña</string>
 
     <string name="description_fb">desciptionFB</string>
     <string name="description_google">description_google</string>

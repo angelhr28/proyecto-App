@@ -64,7 +64,10 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
             startActivity(intent)
         }
 
-        btnSignUp?.setOnClickListener { goToRegister() }
+        btnSignUp?.setOnClickListener {
+            val intent = Intent(ctx, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getFragments() : List<Fragment> {
