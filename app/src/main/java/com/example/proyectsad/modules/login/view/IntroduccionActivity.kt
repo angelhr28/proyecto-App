@@ -64,6 +64,7 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
             startActivity(intent)
         }
 
+        btnSignUp?.setOnClickListener { goToRegister() }
     }
 
     private fun getFragments() : List<Fragment> {

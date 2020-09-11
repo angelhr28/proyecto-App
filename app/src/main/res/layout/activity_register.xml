@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,11 +19,11 @@
     <TextView
         android:id="@+id/lbl_tittle_sign_up"
         android:text="@string/tittle_sign_up"
-        android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/TextViewTittle"/>
+        style="@style/TextViewTittle"
+        android:gravity="center_horizontal" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cedt_username"
@@ -137,7 +138,6 @@
             android:layout_weight="0.25"
             android:gravity="center_horizontal"
             android:text="O"
-            android:textAlignment="center"
             android:textSize="@dimen/text_size_standart"
             android:fontFamily="@font/googlesans_regular"
             android:textColor="@color/color_black" />
@@ -154,42 +154,68 @@
         android:id="@+id/lbl_register_with"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:text="@string/lbl_register_with"
+        android:textSize="@dimen/text_size_standart"
         android:textColor="@color/color_primary"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ln_lines_register" />
 
     <ImageButton
         android:id="@+id/btn_sign_up_google"
-        android:contentDescription="@string/description_fb"
-        android:elevation="4dp"
-        android:layout_marginTop="@dimen/margin_top"
-        app:srcCompat="@drawable/ic_google_two"
+        android:contentDescription="@string/description_google"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs_register"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="@dimen/elevation_button"
+        app:srcCompat="@drawable/ic_google"
+        android:background="@drawable/ripple_corner"
         app:layout_constraintStart_toStartOf="@+id/lbl_register_with"
         app:layout_constraintTop_toBottomOf="@+id/lbl_register_with"
         style="@style/styleIconsOffColor"/>
 
     <ImageButton
         android:id="@+id/btn_sign_up_fb"
-        android:contentDescription="@string/description_google"
-        android:elevation="4dp"
-        android:layout_marginTop="@dimen/margin_top"
-        app:srcCompat="@drawable/ic_fb"
+        android:contentDescription="@string/description_fb"
+        android:layout_marginTop="@dimen/margin_left_and_right_inputs_register"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="@dimen/elevation_button"
+        app:srcCompat="@drawable/ic_facebook"
+        android:background="@drawable/circle_white"
         app:layout_constraintEnd_toEndOf="@+id/lbl_register_with"
         app:layout_constraintTop_toBottomOf="@+id/lbl_register_with"
-        style="@style/styleIconsOffColor"/>
+        style="@style/styleIconsOffColor"
+        />
+
+    <ImageView
+        android:id="@+id/img_rectangle_regiter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_register_with"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_rectangle"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rectagle_curvado"
+        app:layout_constraintTop_toBottomOf="@+id/img_rectangle_regiter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
+        android:id="@+id/lbl_desc_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/googlesans_regular"
-        android:text="@string/lbl_register_sign_in"
+        android:text="@string/lbl_register_sign_in_qst"
         android:textSize="@dimen/text_size_standart"
-        android:textAlignment="center"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="84dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lbl_register_with" />
