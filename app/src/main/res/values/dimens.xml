@@ -2,6 +2,7 @@
 <resources>
     <dimen name="width_button">230dp</dimen>
     <dimen name="height_button">40dp</dimen>
+    <dimen name="width_button_total">248dp</dimen>
     <dimen name="padding_ind_slider">50dp</dimen>
     <dimen name="font_size_button">16dp</dimen>
     <dimen name="elevation_button">4dp</dimen>
@@ -25,4 +26,6 @@
     <dimen name="margin_top">24dp</dimen>
     <dimen name="size_icons">24dp</dimen>
     <dimen name="corner_dialog">20dp</dimen>
+    <dimen name="margin_bottom">42dp</dimen>
+    <dimen name="margin_top_card">90dp</dimen>
 </resources>

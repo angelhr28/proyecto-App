@@ -2,9 +2,11 @@
 <resources>
     <color name="color_primary">#3A71B1</color>
     <color name="color_primary_dark">#2E338C</color>
+    <color name="color_secondary">#2E598C</color>
     <color name="color_light_blue">#03DAC5</color>
     <color name="color_text">#7d7e7d</color>
     <color name="color_white">#FFFFFF</color>
+    <color name="color_white_cortina">#CCFFFFFF</color>
     <color name="color_black">#000000</color>
     <color name="color_transparent">#00FAFAFA</color>
     <color name="color_ripple">#802E598C</color>

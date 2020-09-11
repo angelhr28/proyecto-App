@@ -34,9 +34,7 @@ fun setColorToStatusBar(activity: Activity, color: Int = Color.WHITE) {
         window.statusBarColor = darkColor //Define color
     }
 }
-fun setColorToNavigatioBar(
-    activity: Activity, color: Int = ContextCompat.getColor(ctx,R.color.color_primary)
-) {
+fun setColorToNavigatioBar( activity: Activity, color: Int = ContextCompat.getColor(ctx,R.color.color_primary)) {
     val window = activity.window
     val hsv = FloatArray(3)
     var darkColor: Int = color
@@ -79,10 +77,10 @@ fun calcularPxToDps(context: Context, pixels: Int): Int {
     return (pixels*scale + 0.5f).toInt()
 }
 
-fun dialogDefault(ctx: Context, height:Int, width:Int, layout : Int, function: (View, AlertDialog) -> Unit ) {
+fun dialogDefault(ctx: Context, layout : Int, width:Int? = null, height:Int? = null, function: (View, AlertDialog) -> Unit ) {
 
-    val ancho = calcularPxToDps(ctx, width)
-    val alto = calcularPxToDps(ctx, height)
+    val ancho = width?.let { calcularPxToDps(ctx, it) } ?: WindowManager.LayoutParams.WRAP_CONTENT
+    val alto  = height?.let { calcularPxToDps(ctx, it) } ?: WindowManager.LayoutParams.WRAP_CONTENT
     val dialog = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) AlertDialog.Builder(
         ctx,
         R.style.CustomDialogBackground
@@ -96,6 +94,8 @@ fun dialogDefault(ctx: Context, height:Int, width:Int, layout : Int, function: (
         function(view,this)
         show()
         window?.setLayout(ancho, alto)
-        window?.setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
     }
 }
+
+
+

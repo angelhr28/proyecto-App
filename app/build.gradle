@@ -120,8 +120,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-vision:20.1.2'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
 
-    //Circle Image View
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // PICASSO
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 
 }
