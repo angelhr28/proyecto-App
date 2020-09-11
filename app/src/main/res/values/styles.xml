@@ -70,7 +70,7 @@
         <item name="android:layout_height">@dimen/width_and_height_icons</item>
         <item name="android:layout_marginTop">@dimen/margin_icons_navigation</item>
         <item name="android:background">@drawable/ripple_corner</item>
-        <item name="android:elevation">@dimen/elevation_button</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/elevation_button</item>
     </style>
 
     <style name="ContenInputEditext" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -83,5 +83,15 @@
         <item name = "errorTextAppearance">@style/error_appearance</item>
     </style>
 
+    <style name="CustomDialogBackground" parent="@style/Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="fontFamily">@font/googlesans_regular</item>
+<!--        <item name="android:windowBackground">@color/color_white</item>-->
+        <item name="textColorAlertDialogListItem">@color/color_black</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@drawable/background_shadow</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
 
 </resources>

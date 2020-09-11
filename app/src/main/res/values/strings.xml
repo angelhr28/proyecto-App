@@ -39,4 +39,5 @@
     <string name="color_white">#FFFFFF</string>
     <string name="color_black">#000000</string>
     <string name="lbl_version_project">ProyectoS v1.0</string>
+    <string name="desc_recovery_pass">¡No se preocupe! Simplemente complete su correo electrónico y le enviaremos un enlace para restablecer su contraseña</string>
 </resources>
