@@ -31,13 +31,13 @@ class LoginActivity : AppCompatActivity() {
 
         lblRecupPass?.setOnClickListener {
             dialogDefault(this, 120,240, R.layout.dialog_recovery_password){ view, dialog ->
-                val lblEliminar = view.lbl_opcion_msj_eliminar
-                val lblCancelar = view.lbl_opcion_msj_cancelar
-                lblEliminar.setOnClickListener {
-
-                    dialog.dismiss()
-                }
-                lblCancelar.setOnClickListener { dialog.dismiss() }
+//                val lblEliminar = view.lbl_opcion_msj_eliminar
+//                val lblCancelar = view.lbl_opcion_msj_cancelar
+//                lblEliminar.setOnClickListener {
+//
+//                    dialog.dismiss()
+//                }
+//                lblCancelar.setOnClickListener { dialog.dismiss() }
             }
         }
 
