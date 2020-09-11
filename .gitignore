@@ -1,11 +1,13 @@
 *.iml
 .gradle
 /local.properties
+/.idea/*
 /.idea/caches
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/libraries
 /.idea/navEditor.xml
+/.idea/sonarIssues.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build

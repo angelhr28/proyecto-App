@@ -21,12 +21,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         setColorToStatusBar(this)
         setColorToNavigatioBar(this)
-        val registrate: String? = getString(R.string.registrate).getColoredSpanned(getString(R.string.color_white))
-        val pregRegist: String? = getString(R.string.no_tienes_u).getColoredSpanned(getString(R.string.color_black))
+        val signUpText    : String? = getString(R.string.registrate).getColoredSpanned(getString(R.string.color_white))
+        val signInQuestion: String? = getString(R.string.no_tienes_u).getColoredSpanned(getString(R.string.color_black))
 
         lblDescRegister = lbl_desc_register
 
-        lblDescRegister?.text = Html.fromHtml("$pregRegist $registrate")
-
+        lblDescRegister?.text = Html.fromHtml("$signInQuestion $signUpText")
     }
 }
