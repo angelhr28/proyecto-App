@@ -33,6 +33,7 @@
 
         <activity android:name=".modules.login.view.RegisterActivity" />
 
+
         <activity android:name=".modules.login.view.IntroduccionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
