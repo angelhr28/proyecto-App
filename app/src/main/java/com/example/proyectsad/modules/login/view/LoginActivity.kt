@@ -28,6 +28,5 @@ class LoginActivity : AppCompatActivity() {
 
         lblDescRegister?.text = Html.fromHtml("$pregRegist $registrate")
 
-
     }
 }
