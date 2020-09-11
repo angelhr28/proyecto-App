@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
         lblRecupPass?.setOnClickListener {
             dialogDefault(this, 120,240, R.layout.dialog_recovery_password){ view, dialog ->
+                //
             }
         }
 
