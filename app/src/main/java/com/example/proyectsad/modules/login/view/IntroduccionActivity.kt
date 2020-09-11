@@ -1,5 +1,6 @@
 package com.example.proyectsad.modules.login.view
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,7 @@ import com.example.proyectsad.root.ctx
 import com.example.proyectsad.modules.login.mvp.LoginMVP
 import kotlinx.android.synthetic.main.activity_introduccion.*
 
-class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
+class IntroduccionActivity : AppCompatActivity() {
 
     private var btnSignUp   : AppCompatButton? = null
     private var btnSignIn   : AppCompatButton? = null
@@ -62,7 +63,10 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
             startActivity(intent)
         }
 
-        btnSignUp?.setOnClickListener { goToRegister() }
+        btnSignUp?.setOnClickListener {
+            val intent = Intent(ctx, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getFragments() : List<Fragment> {
@@ -96,7 +100,5 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
             listView[currentPage].setImageDrawable(drawaActive)
         }
     }
-
-    override fun goToRegister() { startActivity(Intent(this,RegisterActivity::class.java)) }
 
 }
