@@ -79,7 +79,7 @@
             android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
+            android:inputType="textPassword"
             android:lines="1"
             android:overScrollMode="always"
             android:scrollbarStyle="insideInset"
