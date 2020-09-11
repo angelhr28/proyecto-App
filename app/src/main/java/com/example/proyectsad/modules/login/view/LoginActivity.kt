@@ -29,17 +29,17 @@ class LoginActivity : AppCompatActivity() {
         lblRecupPass    = lbl_recup_pass
 
 
-        lblRecupPass?.setOnClickListener {
+        /*lblRecupPass?.setOnClickListener {
             dialogDefault(this, 120,240, R.layout.dialog_recovery_password){ view, dialog ->
-                /*val lblEliminar = view.lbl_opcion_msj_eliminar
+                val lblEliminar = view.
                 val lblCancelar = view.lbl_opcion_msj_cancelar
                 lblEliminar.setOnClickListener {
 
                     dialog.dismiss()
                 }
-                lblCancelar.setOnClickListener { dialog.dismiss() }*/
+                lblCancelar.setOnClickListener { dialog.dismiss() }
             }
-        }
+        }*/
 
         lblDescRegister?.apply {
             val signUpText    : String? = getString(R.string.registrate).getColoredSpanned(getString(R.string.color_white))
