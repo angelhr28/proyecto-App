@@ -2,9 +2,9 @@
 .gradle
 /local.properties
 /.idea/caches
-/.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
+/.idea/libraries
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
@@ -12,3 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+.idea/kotlinc.xml
+.idea/caches/build_file_checksums.ser
+
+.idea/*
