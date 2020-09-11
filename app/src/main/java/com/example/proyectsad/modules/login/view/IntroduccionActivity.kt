@@ -63,11 +63,6 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
             val intent = Intent(ctx, LoginActivity::class.java)
             startActivity(intent)
         }
-
-        btnSignUp?.setOnClickListener {
-            val intent = Intent(ctx, RegisterActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun getFragments() : List<Fragment> {
@@ -102,6 +97,9 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
         }
     }
 
-    override fun goToRegister() { startActivity(Intent(this,RegisterActivity::class.java)) }
+    override fun goToRegister() {
+        startActivity(Intent(ctx,RegisterActivity::class.java))
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+    }
 
 }
