@@ -44,7 +44,7 @@ class SplashActivity : AppCompatActivity() {
                 while (progressBarStatus!! < 100) {
                     try {
                         dummy = dummy?.plus(1)
-                        Thread.sleep(10)
+                        Thread.sleep(100)
                     } catch (e: InterruptedException) {
                         e.printStackTrace()
                     }

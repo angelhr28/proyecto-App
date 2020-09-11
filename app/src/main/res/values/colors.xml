@@ -8,6 +8,7 @@
     <color name="color_black">#000000</color>
     <color name="color_transparent">#00FAFAFA</color>
     <color name="color_ripple">#802E598C</color>
+    <color name="color_light_white">#E2E3E3</color>
 
     <color name="color_error">#E6F44336</color>
     <color name="color_text_input">#000000</color>
