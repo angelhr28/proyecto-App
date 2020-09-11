@@ -32,7 +32,6 @@ class SplashActivity : AppCompatActivity() {
 
         splashProgressBar = splash_progress_bar
         imgSplashScreem   = img_splash_screem
-        val corner = calcularPxToDps(ctx, 8)
 
         Picasso.get()
             .load(R.drawable.img_recovery_password)

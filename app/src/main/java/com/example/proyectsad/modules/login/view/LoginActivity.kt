@@ -39,8 +39,6 @@ class LoginActivity : AppCompatActivity() {
             viewCortinaLogin?.visibility = View.VISIBLE
             dialogDefault(this, R.layout.dialog_recovery_password, whidthDialog){ view, dialog ->
                 val imgRecoveryPass = view.img_recovery_pass
-                val corner = calcularPxToDps(ctx, 8)
-
 
                 Picasso.get()
                     .load(R.drawable.img_recovery_password)
