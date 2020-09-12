@@ -31,6 +31,19 @@
         <item name="android:background">@drawable/btn_corner</item>
     </style>
 
+    <style name="ButtonCornerTotal">
+        <item name="android:layout_width">@dimen/width_button_total</item>
+        <item name="android:layout_height">@dimen/height_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/elevation_button</item>
+        <item name="android:textSize">@dimen/font_size_button</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/googlesans_regular</item>
+        <item name="android:background">@drawable/btn_corner_total</item>
+    </style>
+
+
     <style name="TextViewTittle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

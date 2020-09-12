@@ -5,17 +5,19 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.widget.ImageView
 import android.widget.ProgressBar
 import com.example.proyectsad.R
+import com.example.proyectsad.helper.aplication.*
 import com.example.proyectsad.helper.aplication.Constants.SPLASH_DELAY
-import com.example.proyectsad.helper.aplication.setColorToNavigatioBar
-import com.example.proyectsad.helper.aplication.setColorToStatusBar
 import com.example.proyectsad.root.ctx
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
     private var splashProgressBar   : ProgressBar? = null
+    private var imgSplashScreem     : ImageView?   = null
     private var handler             : Handler?     = null
     private var runnable            : Runnable?    = null
 
@@ -29,6 +31,15 @@ class SplashActivity : AppCompatActivity() {
         setColorToNavigatioBar(this, Color.WHITE)
 
         splashProgressBar = splash_progress_bar
+        imgSplashScreem   = img_splash_screem
+
+        Picasso.get()
+            .load(R.drawable.img_recovery_password)
+            .transform(CircleTransform())
+            .centerCrop()
+            .fit()
+            .into(imgSplashScreem)
+
         handler           = Handler()
         runnable          = getRunnable()
     }
@@ -40,7 +51,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun getRunnable():Runnable{
         return Runnable {
-            Thread(Runnable {
+            Thread {
                 while (progressBarStatus!! < 100) {
                     try {
                         dummy = dummy?.plus(1)
@@ -52,7 +63,7 @@ class SplashActivity : AppCompatActivity() {
                     splashProgressBar?.progress = progressBarStatus!!
                 }
                 goToActivity()
-            }).start()
+            }.start()
         }
     }
 

@@ -202,7 +202,7 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/rectagle_curvado"
+        android:background="@drawable/rectagle"
         app:layout_constraintTop_toBottomOf="@+id/img_rectangle_regiter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
