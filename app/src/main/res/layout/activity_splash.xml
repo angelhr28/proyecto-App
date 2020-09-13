@@ -15,18 +15,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <ProgressBar
-        android:id="@+id/splash_progress_bar"
-        android:layout_width="240dp"
-        android:layout_height="8dp"
-        android:layout_marginTop="24dp"
-
-        app:layout_constraintLeft_toLeftOf="@id/img_splash_screem"
-        app:layout_constraintRight_toRightOf="@+id/img_splash_screem"
-        app:layout_constraintTop_toBottomOf="@id/img_splash_screem"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        tools:targetApi="lollipop" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,5 +24,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+    <ImageView
+        android:id="@+id/img_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/img_splash_screem"
+        app:layout_constraintStart_toStartOf="@+id/img_splash_screem"
+        app:layout_constraintTop_toBottomOf="@+id/img_splash_screem"
+        app:srcCompat="@drawable/avd_anim_progress_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
