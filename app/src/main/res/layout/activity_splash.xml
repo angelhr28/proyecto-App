@@ -33,6 +33,6 @@
         app:layout_constraintEnd_toEndOf="@+id/img_splash_screem"
         app:layout_constraintStart_toStartOf="@+id/img_splash_screem"
         app:layout_constraintTop_toBottomOf="@+id/img_splash_screem"
-        app:srcCompat="@drawable/avd_anim_progress_bar" />
+        app:srcCompat="@drawable/progress_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

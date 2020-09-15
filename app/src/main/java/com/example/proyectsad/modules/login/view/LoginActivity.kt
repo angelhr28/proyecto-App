@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
         lblRecupPass?.setOnClickListener {
             setColorToNavigatioBar(this, ContextCompat.getColor(ctx,R.color.color_white_cortina))
             viewCortinaLogin?.visibility = View.VISIBLE
-            dialogDefault(this, R.layout.dialog_recovery_password, whidthDialog){ view, dialog ->
+            dialogDefault(ctx, R.layout.dialog_recovery_password, whidthDialog) { view, dialog ->
                 val imgRecoveryPass = view.img_recovery_pass
 
                 Picasso.get()
@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
             val signInQuestion: String? = getString(R.string.no_tienes_u).getColoredSpanned(getString(R.string.color_black))
             text = Html.fromHtml("$signInQuestion $signUpText")
             setOnClickListener{
-                val intent = Intent(ctx,RegisterActivity::class.java)
+                val intent = Intent(ctx, RegisterActivity::class.java)
                 intent.apply{
                     startActivity(intent)
                 }
