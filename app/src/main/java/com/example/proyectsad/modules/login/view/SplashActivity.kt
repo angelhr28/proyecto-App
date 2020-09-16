@@ -10,6 +10,7 @@ import android.os.Handler
 import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.core.content.ContextCompat
+import androidx.core.os.HandlerCompat
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.example.proyectsad.R
@@ -45,7 +46,7 @@ class SplashActivity : AppCompatActivity() {
             .fit()
             .into(imgSplashScreem)
 
-        animated          = AnimatedVectorDrawableCompat.create(this,  R.drawable.progress_bar)  // todos los contextos que usan THIS   cambialos por ctx pero "ojo solo si es un contexto"
+        animated          = AnimatedVectorDrawableCompat.create(ctx,  R.drawable.progress_bar)
         progressBarAnimated(animated)
 
         handler           = Handler()
@@ -54,12 +55,14 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        handler?.postDelayed(runnable!!,SPLASH_DELAY)  // @pendientes  quita todos los !! de la app no digas que puede ser distinto de null usa los lets
+        handler?.let {
+            it.postDelayed(runnable,SPLASH_DELAY)
+        }
     }
 
     private fun getRunnable():Runnable?{
         return Runnable {
-            Thread(Runnable {   // @Pendiente si te dice que esta demas colocarlo usas los landas
+            Thread {
                 while (progressBarStatus!! < 50) {
                     try {
                         dummy = dummy?.plus(1)
@@ -70,18 +73,15 @@ class SplashActivity : AppCompatActivity() {
                     progressBarStatus = dummy
                 }
                 goToActivity()
-            }).start()
+            }.start()
         }
     }
 
     private fun goToActivity(){
-//        @pendiente Al realizar un intent usar el formato comentado
-//        val intent = Intent(ctx,RegisterActivity::class.java)
-//        intent.apply{
-//            startActivity(intent)
-//        }
-
-        startActivity(Intent(ctx,IntroduccionActivity::class.java))
+        val intent = Intent(ctx,IntroduccionActivity::class.java)
+        intent.apply {
+            startActivity(intent)
+        }
         finish()
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
@@ -93,14 +93,16 @@ class SplashActivity : AppCompatActivity() {
             }
         })
         val drawable = animated
-//        drawable?.setColorFilter(ContextCompat.getColor(ctx,R.color.color_error) , PorterDuff.Mode.SRC_ATOP )
+        drawable?.setColorFilter(ContextCompat.getColor(ctx,R.color.color_error) , PorterDuff.Mode.SRC_ATOP )
         imgProgressBar?.setImageDrawable(drawable)
         drawable?.start()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        if (handler != null) handler!!.removeCallbacks(runnable!!)   //@pendiente Usa los lets y no lo valides por ifs
+        handler?.let {
+            it.removeCallbacks(runnable)
+        }
     }
 
 }
