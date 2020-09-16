@@ -82,8 +82,8 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
 
     private fun addBottomDots(currentPage: Int) {
         lnIndSlider?.removeAllViews()
-        val drawaInactive = ContextCompat.getDrawable(applicationContext, R.drawable.indicator_inactive_slider)
-        val drawaActive= ContextCompat.getDrawable(applicationContext, R.drawable.indicator_active_slider)
+        val drawaInactive = ContextCompat.getDrawable(ctx, R.drawable.indicator_inactive_slider)
+        val drawaActive= ContextCompat.getDrawable(ctx, R.drawable.indicator_active_slider)
         drawaInactive?.alpha = alphaHidden
         mPageAdapter?.count?.let {
             for (i: Int in 0 until it) {
