@@ -6,7 +6,7 @@
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_light_blue</item>
     </style>
-    
+
     <style name="ButtonCornerOutline" >
         <item name="android:layout_width">@dimen/width_button</item>
         <item name="android:layout_height">@dimen/height_button</item>

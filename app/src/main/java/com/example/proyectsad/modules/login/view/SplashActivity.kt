@@ -76,6 +76,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun goToActivity(){
         startActivity(Intent(ctx,IntroduccionActivity::class.java))
+        finish()
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
 
