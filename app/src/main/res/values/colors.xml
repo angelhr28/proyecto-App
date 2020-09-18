@@ -5,6 +5,7 @@
     <color name="color_secondary">#2E598C</color>
     <color name="color_light_blue">#03DAC5</color>
     <color name="color_text">#7d7e7d</color>
+    <color name="color_light_black">#393D3F</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_white_cortina">#CCFFFFFF</color>
     <color name="color_black">#000000</color>
