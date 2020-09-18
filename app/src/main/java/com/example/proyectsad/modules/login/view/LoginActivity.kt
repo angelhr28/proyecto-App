@@ -95,9 +95,9 @@ class LoginActivity : AppCompatActivity(), LoginMVP.View {
 
     private fun getButtonOption() {
         lblRecupPass?.setOnClickListener {
-            setColorToNavigatioBar(this, ContextCompat.getColor(ctx,R.color.color_white_cortina))
+//            setColorToNavigatioBar(this, ContextCompat.getColor(ctx,R.color.color_white_cortina))
             viewCortinaLogin?.visibility = View.VISIBLE
-            dialogDefault(ctx, R.layout.dialog_recovery_password, whidthDialog) { view, dialog ->
+            dialogDefault(this, R.layout.dialog_recovery_password, whidthDialog) { view, dialog ->
                 val imgRecoveryPass    = view.img_recovery_pass
                 val btnRecovery = view.btn_recovery
                 val edtRecovery  = view.edt_recovery
