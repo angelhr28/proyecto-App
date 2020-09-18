@@ -1,8 +1,6 @@
 package com.example.proyectsad.modules.login.view
 
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -13,11 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.proyectsad.R
 import com.example.proyectsad.helper.aplication.*
+import com.example.proyectsad.helper.viewTransform.FadePageTransfomer
+import com.example.proyectsad.helper.viewTransform.MyPageAdapter
 import com.example.proyectsad.modules.login.mvp.LoginMVP
 import com.example.proyectsad.root.ctx
 import kotlinx.android.synthetic.main.activity_introduccion.*
 
-class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
+class IntroduccionActivity : AppCompatActivity() {
 
     private var btnSignUp   : AppCompatButton? = null
     private var btnSignIn   : AppCompatButton? = null
@@ -58,10 +58,15 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
             }
         })
 
-        btnSignUp?.setOnClickListener { goToRegister() }
+        btnSignUp?.setOnClickListener {
+            val intent = Intent(ctx, RegisterActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        }
         btnSignIn?.setOnClickListener {
             val intent = Intent(ctx, LoginActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
     }
 
@@ -95,11 +100,6 @@ class IntroduccionActivity : AppCompatActivity(),LoginMVP.View {
             }
             listView[currentPage].setImageDrawable(drawaActive)
         }
-    }
-
-    override fun goToRegister() {
-        startActivity(Intent(ctx,RegisterActivity::class.java))
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
     }
 
 }
