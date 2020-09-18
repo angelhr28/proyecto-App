@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../SadAnime/.gitignore">
           <value>
             <set />
@@ -43,12 +48,77 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/aplication/Constants.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/aplication/DataStandar.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/aplication/DataStandat.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/aplication/RoundedTransformation.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/aplication/Utils.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/saveCache/MasiquySession.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/saveCache/MySharedPreferences.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/helper/saveCache/SessionData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/model/LoginModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/model/pojo/DataUser.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/model/pojo/Usuario.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/model/pojo/Usuario/Usuario.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/model/service/LoginService.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/mvp/LoginMVP.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/presenter/LoginPresenter.kt">
           <value>
             <set />
           </value>
@@ -69,6 +139,41 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/login/view/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/principal/model/PrincipalModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/principal/mvp/LoginMVP.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/principal/mvp/PrincipalMVP.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/principal/presenter/LoginPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/principal/presenter/PrincipalPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/modules/principal/view/PrincipalActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/proyectsad/root/UnsafeOkHttpClient.kt">
           <value>
             <set />
           </value>
@@ -109,6 +214,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/anim/up_out.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/backgound_snackbar.xml">
           <value>
             <set />
           </value>
@@ -174,6 +284,171 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/helper/application/UnsafeHttpClient.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/helper/session/SessionData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/agenda/view/agendaDocentes/AgendaDocenteActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/agenda/view/agendaDocentes/AgendaDocenteFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/agenda/view/agendaDocentes/itemsAgendaDocente/InsidenciaMedicaFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/agenda/view/agendaPadres/AgendaFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/asistencia/view/AsistAlumnosActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/asistencia/view/AsistenciaFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/asistencia_colab/view/fragment/AsistColabFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/calificaciones/view/activity/AddEstuGrupoActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/calificaciones/view/activity/ListaAlumnosCalifParentActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/calificaciones/view/activity/MatrizCalifStudennActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/calificaciones/view/fragments/CalificacionesFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/dashboard/view/fragment/DashboardFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/login/view/LoginActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/mensajes/view/MensajeriaParentFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/mensajes/view/activity/MensajesChatActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/notas/view/fragment/CursoFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/notas/view/fragment/CursoParentFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/noticias/view/activity/NewsDetalleActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/noticias/view/activity/RegisterNoticiaActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/pagos/view/activity/ConfigTarjetActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/pagos/view/activity/CreateTarjetaActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/pagos/view/fragments/PagoParentFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/perfil/view/fragment/PerfilFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/java/pe/softhy/smiledu/modulos/principal/activity/PrincipalActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/drawable/dialog_style.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/layout/activity_chat.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/layout/activity_eliminar_tarjet.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/layout/dialog_filter_curso.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/layout/fragment_parent_pago.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/values/colors.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/proyectos/proyectoSmiledu/smiledu_android/app/src/main/res/values/styles.xml">
           <value>
             <set />
           </value>

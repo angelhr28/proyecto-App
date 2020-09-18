@@ -3,7 +3,7 @@ package com.example.proyectsad.root
 import android.app.Application
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.proyectsad.helper.aplication.MySharedPreferences
+import com.example.proyectsad.helper.saveCache.MySharedPreferences
 
 val preferences       : MySharedPreferences by lazy { MyApp.prefs!! }
 lateinit var ctx      : Context

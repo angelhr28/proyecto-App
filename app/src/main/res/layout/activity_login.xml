@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_white"
+    android:id="@+id/cont_parent_login"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".modules.login.view.LoginActivity">
 
@@ -231,5 +232,26 @@
         android:elevation="4dp"
         tools:targetApi="lollipop"
         android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/pg_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <TextView
+        android:id="@+id/lbl_load_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/elevation_button"
+        app:layout_constraintTop_toBottomOf="@+id/pg_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,15 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
-import android.widget.ProgressBar
 import androidx.core.content.ContextCompat
-import androidx.core.os.HandlerCompat
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.example.proyectsad.R
 import com.example.proyectsad.helper.aplication.*
-import com.example.proyectsad.helper.aplication.Constants.SPLASH_DELAY
+import com.example.proyectsad.helper.viewTransform.CircleTransform
+import com.example.proyectsad.root.UnsafeOkHttpClient
 import com.example.proyectsad.root.ctx
+import com.google.firebase.FirebaseApp
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_splash.*
 
@@ -29,12 +29,15 @@ class SplashActivity : AppCompatActivity() {
     private var animated            : AnimatedVectorDrawableCompat? = null
     private var progressBarStatus   : Int?         = 0
     private var dummy               : Int?         = 0
+    private val SPLASH_DELAY        : Long   = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         setColorToStatusBar(this)
+        FirebaseApp.initializeApp(this)
         setColorToNavigatioBar(this, Color.WHITE)
+        UnsafeOkHttpClient.initializeSSLContext(this)
 
         imgSplashScreem   = img_splash_screem
         imgProgressBar    = img_progress_bar
