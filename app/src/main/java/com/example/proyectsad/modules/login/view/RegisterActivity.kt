@@ -12,9 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.example.proyectsad.R
-import com.example.proyectsad.helper.aplication.getColoredSpanned
-import com.example.proyectsad.helper.aplication.setColorToNavigatioBar
-import com.example.proyectsad.helper.aplication.setColorToStatusBar
+import com.example.proyectsad.helper.aplication.*
 import com.example.proyectsad.modules.login.mvp.RegisterMVP
 import com.example.proyectsad.modules.login.presenter.RegisterPresenter
 import com.example.proyectsad.root.ctx
@@ -31,11 +29,13 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
     private var edtUsername       : TextInputEditText     ? = null
     private var edtEmail          : TextInputEditText     ? = null
     private var edtPassword       : TextInputEditText     ? = null
+    private var lblDescLogin      : TextView              ? = null
+    private var btnSignUpRegister : AppCompatButton       ? = null
 
-    private var btnSignUpRegister : Button       ? = null
-    private var lblDescLogin      : TextView     ? = null
-    private var txtWatcher        : TextWatcher  ? = null
-    private lateinit var presenter: RegisterMVP.Presenter
+    private var presenter         : RegisterMVP.Presenter ? = null
+
+    private val TAG = this::class.java.name
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,6 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         val signInText      :String? = getString(R.string.lbl_register_sign_in).getColoredSpanned(getString(R.string.color_white))
 
         //Initializations
-        btnSignUpRegister   = btn_sign_up_register
         cedtUsername        = cedt_username
         cedtEmail           = cedt_email
         cedtPassword        = cedt_password
@@ -55,23 +54,23 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         edtEmail            = edt_email
         edtPassword         = edt_password
         lblDescLogin        = lbl_desc_login
+        btnSignUpRegister   = btn_sign_up_register
 
         presenter           = RegisterPresenter(this)
-        txtWatcher          = getTextWatcher()
-
-        edtUsername?.addTextChangedListener(txtWatcher)
-        edtEmail?.addTextChangedListener(txtWatcher)
-        edtPassword?.addTextChangedListener(txtWatcher)
 
         btnSignUpRegister?.apply {
             isEnabled = false
             setBackgroundResource(R.drawable.btn_corner_dissable)
         }
 
+        textFieldsValidations()
+
+        //lblNavigateToSignIn
         lblDescLogin?.apply {
             text = Html.fromHtml("$signInQuestion $signInText")
             setOnClickListener {
-                onBackPressed()
+                //onBackPressed()
+                navigationToSignIn()
             }
         }
 
@@ -89,9 +88,14 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         //
     }
 
-    override fun signUp() {
+    override fun signUpSucess() {
 
     }
+
+    override fun signUpFailure(msgFailure: String) {
+
+    }
+
 
     override fun navigationToSignIn() {
         val intent = Intent(ctx,LoginActivity::class.java)
@@ -112,57 +116,51 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         }
     }
 
-    private fun getTextWatcher():TextWatcher{
-        return object:TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter?.onDestroy()
+    }
+
+    private fun textFieldsValidations() {
+
+        val validate = afterTextChanged {
+            val username = edtUsername?.text.toString().trim()
+            val email = edtEmail?.text.toString().trim()
+            val password = edtPassword?.text.toString().trim()
+
+            val isEmailValid = emailValid(email)
+
+            btnSignUpRegister?.apply {
+                isEnabled = validateButton(username, email, password)
+                if (isEnabled && isEmailValid) setBackgroundResource(R.drawable.btn_corner)
+                else setBackgroundResource(R.drawable.btn_corner_dissable)
             }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
+        }
+        edtUsername?.addTextChangedListener(validate)
+        edtEmail?.addTextChangedListener(validate)
+        edtPassword?.addTextChangedListener(validate)
+    }
 
-            override fun afterTextChanged(s: Editable?) {
-                val username = edtUsername?.text.toString().trim()
-                val email    = edtEmail?.text.toString().trim()
-                val password = edtPassword?.text.toString().trim()
+    private fun validateButton(username:String,email:String,password:String):Boolean{
+        if(isNullOrEmpty(username)) return false
+        if(isNullOrEmpty(email)) return false
+        if(isNullOrEmpty(password)) return false
+        return true
+    }
 
-                if(username.isEmpty() && email.isEmpty() && password.isEmpty()){
-                    btnSignUpRegister?.apply {
-                        isEnabled = false
-                        setBackgroundResource(R.drawable.btn_corner_dissable)
-                    }
-                }else{
-                    btnSignUpRegister?.apply {
-                        isEnabled = true
-                        setBackgroundResource(R.drawable.btn_corner)
-                        setOnClickListener { validations(username, email, password) }
-                    }
-                }
-            }
+    private fun emailValid(email: String):Boolean{
+        return when (isValidateEmail(email)) {
+            false -> { cedtEmail?.error = "Ingrese un email valido"; false }
+            else  -> { cedtEmail?.error = null ; true }
         }
     }
 
-    private fun validations(username:String,email:String,password:String){
-        if(presenter.checkEmptyInputs(username)){
-            cedtUsername?.error = "Inserte su nombre completo"
-            return
-        }else cedtUsername?.error = null
-
-        if(presenter.checkEmptyInputs(email)){
-            cedtEmail?.error    = "Inserte un email"
-            return
-        }else cedtEmail?.error = null
-
-        if(!presenter.checkValidEmail(email)){
-            cedtEmail?.error = "Inserte un email valido"
-            return
-        }else cedtEmail?.error = null
-
-        if(presenter.checkEmptyInputs(password)){
-            cedtPassword?.error = "Inserte una contraseña"
-            return
-        }else cedtPassword?.error = null
-
-        presenter.signUpUser(username, email, password)
-    }
-
+//    private fun passwordValid(password: String):Boolean{
+//        return when{
+//            password.length <=4 -> { cedtPassword?.error = "La contraseña debe tener minimo 4 caracteres" ; false }
+//            password.length <=8 -> { cedtPassword?.error = "La contraseña debe tener minimo 8 caracteres" ; false }
+//            else->{ cedtPassword?.error = null ; true}
+//        }
+//    }
 }

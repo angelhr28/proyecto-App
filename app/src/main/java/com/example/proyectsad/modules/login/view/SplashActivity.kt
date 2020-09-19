@@ -96,7 +96,7 @@ class SplashActivity : AppCompatActivity() {
             }
         })
         val drawable = animated
-        drawable?.setColorFilter(ContextCompat.getColor(ctx,R.color.color_error) , PorterDuff.Mode.SRC_ATOP )
+        drawable?.setColorFilter(ContextCompat.getColor(ctx,R.color.color_primary) , PorterDuff.Mode.SRC_ATOP )
         imgProgressBar?.setImageDrawable(drawable)
         drawable?.start()
     }
