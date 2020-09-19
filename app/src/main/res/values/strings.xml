@@ -36,6 +36,9 @@
     <string name="recuperar_contrase_a">Recuperar contraseña</string>
     <string name="ingrese_usuario">Ingrese el usuario</string>
     <string name="ingrese_clave">Ingrese la contraseña</string>
+    <string name="ingrese_nuevo_nombre">Ingrese un nombre completo</string>
+    <string name="ingrese_nuevo_email">Ingrese un email</string>
+    <string name="ingrese_nuevo_clave">Ingrese una contraseña</string>
     <string name="sin_conexion">Sin conexión a internet</string>
     <string name="error_service">Ocurrió un error en servicio</string>
     <string name="error_general">Ocurrió un error </string>

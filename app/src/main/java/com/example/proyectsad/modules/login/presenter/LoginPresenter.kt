@@ -29,6 +29,7 @@ class LoginPresenter(val view: LoginMVP.View):LoginMVP.Presenter {
             !isConnected(ctx)       -> return view.logInError(ctx.getString(R.string.sin_conexion))
         }
         view.showProgress("Cargando...")
+
         val disposable = model.logInStandart(user, password).subscribe(
             { result ->
                 setDataUserCache(result, user)

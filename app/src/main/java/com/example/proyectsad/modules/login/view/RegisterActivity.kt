@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.proyectsad.R
 import com.example.proyectsad.helper.aplication.*
 import com.example.proyectsad.modules.login.mvp.RegisterMVP
@@ -23,6 +24,7 @@ import androidx.core.widget.addTextChangedListener as addTextChangedListener1
 
 class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
 
+    private var contParentRegister: ConstraintLayout      ? = null
     private var cedtUsername      : TextInputLayout       ? = null
     private var cedtEmail         : TextInputLayout       ? = null
     private var cedtPassword      : TextInputLayout       ? = null
@@ -43,10 +45,8 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         setColorToStatusBar(this)
         setColorToNavigatioBar(this)
 
-        val signInQuestion  :String? = getString(R.string.lbl_register_sign_in_qst).getColoredSpanned(getString(R.string.color_black))
-        val signInText      :String? = getString(R.string.lbl_register_sign_in).getColoredSpanned(getString(R.string.color_white))
-
         //Initializations
+        contParentRegister  = cont_parent_register
         cedtUsername        = cedt_username
         cedtEmail           = cedt_email
         cedtPassword        = cedt_password
@@ -63,10 +63,17 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
             setBackgroundResource(R.drawable.btn_corner_dissable)
         }
 
+        //Validations
         textFieldsValidations()
 
-        //lblNavigateToSignIn
+        //onClickListener
+        btnSignUpRegister?.apply {
+            setOnClickListener { signUp() }
+        }
+
         lblDescLogin?.apply {
+            val signInQuestion  :String? = getString(R.string.lbl_register_sign_in_qst).getColoredSpanned(getString(R.string.color_black))
+            val signInText      :String? = getString(R.string.lbl_register_sign_in).getColoredSpanned(getString(R.string.color_white))
             text = Html.fromHtml("$signInQuestion $signInText")
             setOnClickListener {
                 //onBackPressed()
@@ -77,15 +84,19 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
     }
 
     override fun showError(msgError: String) {
-        Toast.makeText(this, msgError, Toast.LENGTH_SHORT).show()
+        contParentRegister?.showSimpleSnackbar(msgError){}
     }
 
     override fun showProgress() {
-        //
+        //doSomething
     }
 
     override fun hideProgress() {
-        //
+        //doSomething
+    }
+
+    override fun showSnackBar(msg: String) {
+        contParentRegister?.showSimpleSnackbar(msg){}
     }
 
     override fun signUpSucess() {
@@ -96,16 +107,19 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
 
     }
 
-
     override fun navigationToSignIn() {
         val intent = Intent(ctx,LoginActivity::class.java)
-        startActivity(intent)
+        intent.apply {
+            startActivity(this)
+        }
         finish()
     }
 
     override fun navigationToIntro() {
         val intent = Intent(ctx,IntroduccionActivity::class.java)
-        startActivity(intent)
+        intent.apply{
+            startActivity(this)
+        }
         finish()
     }
 
@@ -140,6 +154,13 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         edtUsername?.addTextChangedListener(validate)
         edtEmail?.addTextChangedListener(validate)
         edtPassword?.addTextChangedListener(validate)
+    }
+
+    override fun signUp() {
+        val username = edtUsername?.text.toString().trim().removerTildes()
+        val email = edtEmail?.text.toString().trim().removerTildes()
+        val password = edtPassword?.text.toString().trim().removerTildes()
+        presenter?.signUpStandard(username, email, password)
     }
 
     private fun validateButton(username:String,email:String,password:String):Boolean{

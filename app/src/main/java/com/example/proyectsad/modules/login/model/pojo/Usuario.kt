@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 data class Usuario (
     @field:SerializedName("nombre_abvr")
     var nombreAbvr: String? = null,
+    @field:SerializedName("email_user")
+    var emailUser: String? = null,
     @field:SerializedName("foto_usuario")
     var fotoUsuario: String? = null,
     @field:SerializedName("id_usuario")
