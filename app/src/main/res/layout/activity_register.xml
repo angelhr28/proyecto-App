@@ -83,27 +83,30 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cedt_password"
-        style="@style/ContenInputEditext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:focusableInTouchMode="true"
         android:hint="@string/et_password"
-        app:endIconMode="password_toggle"
+        android:layout_marginTop="@dimen/elevation_button"
         app:errorEnabled="true"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="@+id/cedt_email"
         app:layout_constraintStart_toStartOf="@+id/cedt_email"
-        app:layout_constraintTop_toBottomOf="@id/cedt_email">
+        app:layout_constraintTop_toBottomOf="@id/cedt_email"
+        style="@style/ContenInputEditext"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
+            android:inputType="textPassword"
             android:lines="1"
-            android:maxLength="1000"
             android:overScrollMode="always"
             android:scrollbarStyle="insideInset"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            android:maxLength="1000"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 

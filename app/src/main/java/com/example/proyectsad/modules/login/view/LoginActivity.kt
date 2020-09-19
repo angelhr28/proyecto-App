@@ -146,6 +146,7 @@ class LoginActivity : AppCompatActivity(), LoginMVP.View {
                     startActivity(intent)
                 }
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                finish()
             }
         }
 

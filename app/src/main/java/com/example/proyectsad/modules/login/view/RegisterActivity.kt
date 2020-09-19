@@ -16,6 +16,7 @@ import com.example.proyectsad.R
 import com.example.proyectsad.helper.aplication.*
 import com.example.proyectsad.modules.login.mvp.RegisterMVP
 import com.example.proyectsad.modules.login.presenter.RegisterPresenter
+import com.example.proyectsad.modules.principal.view.PrincipalActivity
 import com.example.proyectsad.root.ctx
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -78,15 +79,10 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
             val signInText      :String? = getString(R.string.lbl_register_sign_in).getColoredSpanned(getString(R.string.color_white))
             text = Html.fromHtml("$signInQuestion $signInText")
             setOnClickListener {
-                //onBackPressed()
                 navigationToSignIn()
             }
         }
 
-    }
-
-    override fun showError(msgError: String) {
-        contParentRegister?.showSimpleSnackbar(msgError){}
     }
 
     override fun showProgress() {
@@ -101,28 +97,16 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         contParentRegister?.showSimpleSnackbar(msg){}
     }
 
-    override fun signUpSucess() {
-
-    }
-
-    override fun signUpFailure(msgFailure: String) {
-
-    }
-
-    override fun navigationToSignIn() {
-        val intent = Intent(ctx,LoginActivity::class.java)
+    override fun signUpSuccess() {
+        val intent = Intent(ctx,PrincipalActivity::class.java)
         intent.apply {
             startActivity(this)
         }
         finish()
     }
 
-    override fun navigationToIntro() {
-        val intent = Intent(ctx,IntroduccionActivity::class.java)
-        intent.apply{
-            startActivity(this)
-        }
-        finish()
+    override fun signUpFailure(msgFailure: String) {
+        contParentRegister?.showSimpleSnackbar(msgFailure){}
     }
 
     override fun onBackPressed() {
@@ -161,7 +145,7 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         edtPassword?.addTextChangedListener(validate)
     }
 
-    override fun signUp() {
+    private fun signUp() {
         val username = edtUsername?.text.toString().trim().removerTildes()
         val email = edtEmail?.text.toString().trim().removerTildes()
         val password = edtPassword?.text.toString().trim().removerTildes()
@@ -175,6 +159,16 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         return true
     }
 
+    //@pendiente
+
+    //function that doesn't mather xd
+    override fun navigationToSignIn(){
+        val intent = Intent(ctx,LoginActivity::class.java)
+        intent.apply {
+            startActivity(this)
+        }
+        overridePendingTransition(R.anim.right_in,R.anim.right_out)
+        finish()
     }
 
 //    private fun passwordValid(password: String):Boolean{
