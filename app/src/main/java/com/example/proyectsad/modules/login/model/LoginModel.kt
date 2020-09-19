@@ -20,13 +20,13 @@ class LoginModel : LoginMVP.Model{
     private val service = retrofit.create(LoginService::class.java)
 
     override fun logInStandart(user: String, password: String): Observable<DataUser> {
-        return service.login(user, password, TypeLogin.STANDART)
+        return service.login(user, password, Type.STANDARD)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 
     override fun logInRedes(user: String): Observable<DataUser> {
-        return service.login(user, null, TypeLogin.REDES)
+        return service.login(user, null, Type.REDES)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 
@@ -40,6 +40,6 @@ class LoginModel : LoginMVP.Model{
     }
 }
 
-enum class TypeLogin {
-    STANDART, REDES
+enum class Type {
+    STANDARD, REDES
 }

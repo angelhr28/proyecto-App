@@ -58,6 +58,8 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
 
         presenter           = RegisterPresenter(this)
 
+        // REVISAR TU INPUT DE CONTRASEÑA PORQUE AL INICIO SE MUESTRA LA CONTRA DEBERIA ESTAR EN PUNTITOS Y LUEGO PRESIONAR Y MOSTARLO
+
         btnSignUpRegister?.apply {
             isEnabled = false
             setBackgroundResource(R.drawable.btn_corner_dissable)
@@ -142,8 +144,8 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
             val email = edtEmail?.text.toString().trim()
             val password = edtPassword?.text.toString().trim()
 
-            val isEmailValid = emailValid(email)
-
+            val isEmailValid = emailValid(email)   // @PENDIENTE YA EXISTE ESTA MRD TE LO DIJE LA OTRA VEZ NO CREES COSAS EXISTENTES
+                                                             // @PENDIENTE SI QUIERE VALIDAR EL ERRO PONLO DIRECTO AQUI
             btnSignUpRegister?.apply {
                 isEnabled = validateButton(username, email, password)
                 if (isEnabled && isEmailValid) setBackgroundResource(R.drawable.btn_corner)

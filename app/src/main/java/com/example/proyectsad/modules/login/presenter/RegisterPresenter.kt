@@ -38,7 +38,7 @@ class RegisterPresenter(private val view: RegisterMVP.View):RegisterMVP.Presente
             {result->
                 setUserDataCache(result, username, email)
                 view.hideProgress()
-                view.navigationToIntro()
+                view.navigationToIntro()  // @PENDIENTE PORQUE MRD TE MANDARIA A LA INTRO SI TE REGISTRAR AL MENOS MANDALO DIRECTO AL LOGIN  O LOGEALO DIRECTO
             },
             {error->
                 view.hideProgress()

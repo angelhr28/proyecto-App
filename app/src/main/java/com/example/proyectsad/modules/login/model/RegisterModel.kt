@@ -9,6 +9,7 @@ import com.example.proyectsad.modules.login.presenter.RegisterPresenter
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.time.format.DecimalStyle.STANDARD
 
 class RegisterModel:RegisterMVP.Model {
 
@@ -22,7 +23,7 @@ class RegisterModel:RegisterMVP.Model {
             .observeOn(AndroidSchedulers.mainThread())
     }
 }
-
+//@Pendiente LAS CLASES SOLO SE CREAN UNA VEZ NO ES NECESARIO QUE LA VUELVAS A CREAR >:V
 enum class TypeRegister {
     STANDARD, SOCIAL_MEDIA
 }

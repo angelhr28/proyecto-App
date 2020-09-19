@@ -58,6 +58,12 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+//        runnable?.let {
+//            handler?.postDelayed(it,SPLASH_DELAY)
+//        }
+//        @PENDIENTE PARA QUE PONES UN LET DE ALGO QUE DE POR SI NO TE PIDEN ??   EL LET NO DEBERIA SER DEL RUNNABLE ?? ?  ALGO ASI >:V
+
         handler?.let {
             it.postDelayed(runnable,SPLASH_DELAY)
         }
@@ -65,8 +71,8 @@ class SplashActivity : AppCompatActivity() {
 
     private fun getRunnable():Runnable?{
         return Runnable {
-            Thread {
-                while (progressBarStatus!! < 50) {
+            Thread {// @ PENDIENTE QUE PARTE DE NO QUIERO VER NINGUN !! EN LA APP NO SE ENTENDIO  >:V   PONLE UNA FUNCION TERNARIOA EJEMPLO
+                while (progressBarStatus ?: 0 < 50) {    // PONLO ASI  while (progressBarStatus ?: 0 < 50) {
                     try {
                         dummy = dummy?.plus(1)
                         Thread.sleep(50)
@@ -103,6 +109,12 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+//        runnable?.let {
+//            handler?.removeCallbacks(it)   INVESTIGA COMO USAR EL PTO LET
+//        }
+//        @PENDIENTE PARA QUE PONES UN LET DE ALGO QUE DE POR SI NO TE PIDEN ??   EL LET NO DEBERIA SER DEL RUNNABLE ?? ?  ALGO ASI >:V
+//        LA MISMA WEBADA ACA
+
         handler?.let {
             it.removeCallbacks(runnable)
         }

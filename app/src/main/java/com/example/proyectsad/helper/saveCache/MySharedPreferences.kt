@@ -19,7 +19,7 @@ class MySharedPreferences(context: Context) {
         get() = prefs.getString("name_completo_User", "")  ?: ""
         set(value) = prefs.edit().putString("name_completo_User", value).apply()
 
-    var emailUser: String
+    var emailUser: String  //@Pendiente borra esta mrd el correo es el User entonces donde cree que va una pista  User :v
         get() = prefs.getString("email_user", "")  ?: ""
         set(value) = prefs.edit().putString("email_user", value).apply()
 
