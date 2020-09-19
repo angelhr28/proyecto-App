@@ -25,6 +25,9 @@ import androidx.core.widget.addTextChangedListener as addTextChangedListener1
 
 class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
 
+    private val TAG = this::class.java.name
+
+    private var btnSignUpRegister : AppCompatButton       ? = null
     private var contParentRegister: ConstraintLayout      ? = null
     private var cedtUsername      : TextInputLayout       ? = null
     private var cedtEmail         : TextInputLayout       ? = null
@@ -33,11 +36,8 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
     private var edtEmail          : TextInputEditText     ? = null
     private var edtPassword       : TextInputEditText     ? = null
     private var lblDescLogin      : TextView              ? = null
-    private var btnSignUpRegister : AppCompatButton       ? = null
 
     private var presenter         : RegisterMVP.Presenter ? = null
-
-    private val TAG = this::class.java.name
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,8 +59,6 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
 
         presenter           = RegisterPresenter(this)
 
-        // REVISAR TU INPUT DE CONTRASEÑA PORQUE AL INICIO SE MUESTRA LA CONTRA DEBERIA ESTAR EN PUNTITOS Y LUEGO PRESIONAR Y MOSTARLO
-
         btnSignUpRegister?.apply {
             isEnabled = false
             setBackgroundResource(R.drawable.btn_corner_dissable)
@@ -79,10 +77,14 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
             val signInText      :String? = getString(R.string.lbl_register_sign_in).getColoredSpanned(getString(R.string.color_white))
             text = Html.fromHtml("$signInQuestion $signInText")
             setOnClickListener {
-                navigationToSignIn()
+                navigateToSignIn()
             }
         }
 
+    }
+
+    override fun showError(msgError: String) {
+        contParentRegister?.showSimpleSnackbar(msgError){}
     }
 
     override fun showProgress() {
@@ -91,22 +93,6 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
 
     override fun hideProgress() {
         //doSomething
-    }
-
-    override fun showSnackBar(msg: String) {
-        contParentRegister?.showSimpleSnackbar(msg){}
-    }
-
-    override fun signUpSuccess() {
-        val intent = Intent(ctx,PrincipalActivity::class.java)
-        intent.apply {
-            startActivity(this)
-        }
-        finish()
-    }
-
-    override fun signUpFailure(msgFailure: String) {
-        contParentRegister?.showSimpleSnackbar(msgFailure){}
     }
 
     override fun onBackPressed() {
@@ -128,14 +114,34 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
             val email = edtEmail?.text.toString().trim()
             val password = edtPassword?.text.toString().trim()
 
-            val isEmailValid = when (isValidateEmail(email)) {
-                false -> { cedtEmail?.error = "Ingrese un email valido"; false }
-                else  -> { cedtEmail?.error = null; true }
+            //show error validations
+            var isEmailValid = false
+            var isPasswordValid = false
+
+            //Don't show email error if ->
+            if(!isNullOrEmpty(email)){
+                if(!isValidateEmail(email)){
+                    cedtEmail?.error = "Ingrese un email valido"
+                    isEmailValid = false
+                }else{
+                    cedtEmail?.error = null
+                    isEmailValid = true
+                }
+            }
+
+            //Don't show password error if ->
+            if (!isNullOrEmpty(password)) {
+                isPasswordValid = when {
+                    //Test only
+                    password.length <= 4 -> { cedtPassword?.error = "La contraseña debe tener minimo 4 caracteres"; false }
+                    password.length <= 8 -> { cedtPassword?.error = "La contraseña debe tener minimo 8 caracteres"; false }
+                    else -> { cedtPassword?.error = null; true }
+                }
             }
 
             btnSignUpRegister?.apply {
                 isEnabled = validateButton(username, email, password)
-                if (isEnabled && isEmailValid) setBackgroundResource(R.drawable.btn_corner)
+                if (isEnabled && isEmailValid && isPasswordValid) setBackgroundResource(R.drawable.btn_corner)
                 else setBackgroundResource(R.drawable.btn_corner_dissable)
             }
 
@@ -145,12 +151,26 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         edtPassword?.addTextChangedListener(validate)
     }
 
-    private fun signUp() {
+    override fun signUp() {
         val username = edtUsername?.text.toString().trim().removerTildes()
         val email = edtEmail?.text.toString().trim().removerTildes()
         val password = edtPassword?.text.toString().trim().removerTildes()
         presenter?.signUpStandard(username, email, password)
     }
+
+    override fun navigateToSignIn(){
+        val intent = Intent(ctx,LoginActivity::class.java)
+        intent.apply { startActivity(this) }
+        overridePendingTransition(R.anim.right_in,R.anim.right_out)
+        finish()
+    }
+
+    override fun navigateToMain() {
+        val intent = Intent(ctx,PrincipalActivity::class.java)
+        intent.apply { startActivity(this) }
+        finish()
+    }
+
 
     private fun validateButton(username:String,email:String,password:String):Boolean{
         if(isNullOrEmpty(username)) return false
@@ -159,23 +179,4 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         return true
     }
 
-    //@pendiente
-
-    //function that doesn't mather xd
-    override fun navigationToSignIn(){
-        val intent = Intent(ctx,LoginActivity::class.java)
-        intent.apply {
-            startActivity(this)
-        }
-        overridePendingTransition(R.anim.right_in,R.anim.right_out)
-        finish()
-    }
-
-//    private fun passwordValid(password: String):Boolean{
-//        return when{
-//            password.length <=4 -> { cedtPassword?.error = "La contraseña debe tener minimo 4 caracteres" ; false }
-//            password.length <=8 -> { cedtPassword?.error = "La contraseña debe tener minimo 8 caracteres" ; false }
-//            else->{ cedtPassword?.error = null ; true}
-//        }
-//    }
 }

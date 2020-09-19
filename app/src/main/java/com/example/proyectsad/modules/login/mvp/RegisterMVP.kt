@@ -6,12 +6,12 @@ import io.reactivex.Observable
 interface RegisterMVP {
 
     interface View{
+        fun showError(msgError: String)
         fun showProgress()
         fun hideProgress()
-        fun showSnackBar(msg: String)
-        fun signUpSuccess()
-        fun signUpFailure(msgFailure: String)
-        fun navigationToSignIn()
+        fun signUp()
+        fun navigateToSignIn()
+        fun navigateToMain()
     }
 
     interface Presenter{

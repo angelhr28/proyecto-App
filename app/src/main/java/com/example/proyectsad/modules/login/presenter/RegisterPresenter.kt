@@ -28,17 +28,17 @@ class RegisterPresenter(private val view: RegisterMVP.View):RegisterMVP.Presente
 
     override fun signUpStandard(username: String, email: String, password: String) {
         when{
-            isNullOrEmpty(username)     -> return view.signUpFailure(ctx.getString(R.string.ingrese_nuevo_nombre))
-            isNullOrEmpty(email)        -> return view.signUpFailure(ctx.getString(R.string.ingrese_nuevo_email))
-            isNullOrEmpty(password)     -> return view.signUpFailure(ctx.getString(R.string.ingrese_nuevo_clave))
-            !isConnected(ctx)           -> return view.signUpFailure(ctx.getString(R.string.sin_conexion))
+            isNullOrEmpty(username)     -> return view.showError(ctx.getString(R.string.ingrese_nuevo_nombre))
+            isNullOrEmpty(email)        -> return view.showError(ctx.getString(R.string.ingrese_nuevo_email))
+            isNullOrEmpty(password)     -> return view.showError(ctx.getString(R.string.ingrese_nuevo_clave))
+            !isConnected(ctx)           -> return view.showError(ctx.getString(R.string.sin_conexion))
         }
         view.showProgress()
         val disposable = model.signUpStandard(username, email, password).subscribe(
             {result->
                 setUserDataCache(result, username, email)
                 view.hideProgress()
-                view.showSnackBar(result.msj ?: "")
+                view.showError(result.msj ?: "")
             },
             {error->
                 view.hideProgress()
@@ -47,12 +47,12 @@ class RegisterPresenter(private val view: RegisterMVP.View):RegisterMVP.Presente
                     try {
                         val jObjError = JSONObject(response.errorBody()?.string())
                         val result = Gson().fromJson(jObjError.toString(), DataStandar::class.java)
-                        view.signUpFailure(result.msj ?: "")
+                        view.showError(result.msj ?: "")
                     } catch (e: Exception) {
-                        view.signUpFailure("${ctx.getString(R.string.error_service)} -- ${e.message.toString()}")
+                        view.showError("${ctx.getString(R.string.error_service)} -- ${e.message.toString()}")
                     }
                 } else {
-                    view.signUpFailure("${ctx.getString(R.string.error_general)} -- ${error.message.toString()}")
+                    view.showError("${ctx.getString(R.string.error_general)} -- ${error.message.toString()}")
                 }
             }
         )
