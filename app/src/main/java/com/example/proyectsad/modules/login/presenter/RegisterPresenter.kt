@@ -38,7 +38,7 @@ class RegisterPresenter(private val view: RegisterMVP.View):RegisterMVP.Presente
             {result->
                 setUserDataCache(result, username, email)
                 view.hideProgress()
-                view.navigationToIntro()  // @PENDIENTE PORQUE MRD TE MANDARIA A LA INTRO SI TE REGISTRAR AL MENOS MANDALO DIRECTO AL LOGIN  O LOGEALO DIRECTO
+                view.navigationToSignIn()
             },
             {error->
                 view.hideProgress()
@@ -68,11 +68,10 @@ class RegisterPresenter(private val view: RegisterMVP.View):RegisterMVP.Presente
     }
 
     private fun setUserDataCache(result: DataUser, username: String,email: String){
-        preferences.user      = result.usuario?.usuario ?: ""
         preferences.token     = result.usuario?.token ?: ""
         preferences.idPersona = result.usuario?.idUsuario ?: 0
+        preferences.user      = result.usuario?.usuario ?: email
         preferences.nameCompletoUser  = result.usuario?.nombreAbvr ?: username
-        preferences.emailUser         = result.usuario?.emailUser ?: email
         session.values.currentUsuario = result
     }
 }

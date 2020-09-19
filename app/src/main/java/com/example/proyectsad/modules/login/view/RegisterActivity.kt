@@ -144,8 +144,11 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
             val email = edtEmail?.text.toString().trim()
             val password = edtPassword?.text.toString().trim()
 
-            val isEmailValid = emailValid(email)   // @PENDIENTE YA EXISTE ESTA MRD TE LO DIJE LA OTRA VEZ NO CREES COSAS EXISTENTES
-                                                             // @PENDIENTE SI QUIERE VALIDAR EL ERRO PONLO DIRECTO AQUI
+            val isEmailValid = when (isValidateEmail(email)) {
+                false -> { cedtEmail?.error = "Ingrese un email valido"; false }
+                else  -> { cedtEmail?.error = null; true }
+            }
+
             btnSignUpRegister?.apply {
                 isEnabled = validateButton(username, email, password)
                 if (isEnabled && isEmailValid) setBackgroundResource(R.drawable.btn_corner)
@@ -172,11 +175,6 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
         return true
     }
 
-    private fun emailValid(email: String):Boolean{
-        return when (isValidateEmail(email)) {
-            false -> { cedtEmail?.error = "Ingrese un email valido"; false }
-            else  -> { cedtEmail?.error = null ; true }
-        }
     }
 
 //    private fun passwordValid(password: String):Boolean{

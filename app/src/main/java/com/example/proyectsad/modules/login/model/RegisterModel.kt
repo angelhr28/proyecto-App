@@ -18,12 +18,8 @@ class RegisterModel:RegisterMVP.Model {
     private val service = retrofit.create(RegisterService::class.java)
 
     override fun signUpStandard( username: String, email: String, password: String ): Observable<DataUser> {
-        return service.register(username, email, password, TypeRegister.STANDARD)
+        return service.register(username, email, password, Type.STANDARD)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
-}
-//@Pendiente LAS CLASES SOLO SE CREAN UNA VEZ NO ES NECESARIO QUE LA VUELVAS A CREAR >:V
-enum class TypeRegister {
-    STANDARD, SOCIAL_MEDIA
 }

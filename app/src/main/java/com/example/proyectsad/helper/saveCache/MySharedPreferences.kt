@@ -19,10 +19,6 @@ class MySharedPreferences(context: Context) {
         get() = prefs.getString("name_completo_User", "")  ?: ""
         set(value) = prefs.edit().putString("name_completo_User", value).apply()
 
-    var emailUser: String  //@Pendiente borra esta mrd el correo es el User entonces donde cree que va una pista  User :v
-        get() = prefs.getString("email_user", "")  ?: ""
-        set(value) = prefs.edit().putString("email_user", value).apply()
-
     var idPersona : Int
         get() = prefs.getInt("id_persona", 0)
         set(value) = prefs.edit().putInt("id_persona", value).apply()
@@ -43,7 +39,6 @@ class MySharedPreferences(context: Context) {
         prefs.edit().remove("user").apply()
         prefs.edit().remove("foto_user").apply()
         prefs.edit().remove("name_completo_User").apply()
-        prefs.edit().remove("email_user").apply()
         prefs.edit().remove("id_persona").apply()
         prefs.edit().remove("sounds_enable").apply()
         prefs.edit().remove("device_token").apply()
