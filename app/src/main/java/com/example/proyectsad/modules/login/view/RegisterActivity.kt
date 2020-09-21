@@ -118,7 +118,7 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
             var isEmailValid = false
             var isPasswordValid = false
 
-            //Don't show email error if ->
+            //Only show email error if ->
             if(!isNullOrEmpty(email)){
                 if(!isValidateEmail(email)){
                     cedtEmail?.error = "Ingrese un email valido"
@@ -129,7 +129,7 @@ class RegisterActivity : AppCompatActivity(),RegisterMVP.View {
                 }
             }
 
-            //Don't show password error if ->
+            //Only show password error if ->
             if (!isNullOrEmpty(password)) {
                 isPasswordValid = when {
                     //Test only
